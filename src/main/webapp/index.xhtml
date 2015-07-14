@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Guest book</title>
+    </h:head>
+    <h:body>
+        <div id="welcomeCont">
+            Добро пожаловать, #{user.name}!  <p:link id="buttonIn" outcome="in" value="войти" />
+        </div>
+        <br />
+        <h1> Гостевая книга </h1>
+         <p:dataTable var="book" >
+                <p:column headerText="Тема">
+                    <h:outputText value="#{book.subject}" />
+                </p:column>
+
+                <p:column headerText="Содержание">
+                    <h:outputText value="#{book.content}" />
+                </p:column>
+
+                <p:column headerText="Отправитель">
+                    <h:outputText value="#{user.name}" />
+                </p:column>
+
+                <p:column headerText="Дата">
+                    <h:outputText value="#{book.date}" />
+                </p:column>
+            </p:dataTable>
+        
+        <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
+    </h:body>
+</html>
+
